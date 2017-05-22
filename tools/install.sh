@@ -27,6 +27,8 @@ main() {
     INSTALL_DIR=~/.sk
     RUNNABLE_PATH=sk.groovy
     RUNNABLE_LINK=/usr/local/bin/sk
+    LAST_UPDATED_FILE=$INSTALL_DIR/.last-updated
+    EPOCH_DAYS=$(( $(date +%s) / 60 / 60 / 24 ))
 
     if [ -d "$INSTALL_DIR" ]; then
         printf "${YELLOW}Already installed.${NORMAL}\n"
@@ -60,6 +62,7 @@ main() {
     }
 
     ln -s $INSTALL_DIR/$RUNNABLE_PATH $RUNNABLE_LINK
+    echo "LAST_UPDATED_EPOCH_DAYS=$EPOCH_DAYS" > $LAST_UPDATED_FILE
 
     printf "${GREEN}"
     echo 'Installation completed.'
