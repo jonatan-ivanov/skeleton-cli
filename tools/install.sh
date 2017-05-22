@@ -24,8 +24,8 @@ main() {
     set -e
 
     GIT_REPO_URL='https://github.com/jonatan-ivanov/skeleton-cli.git'
-    RUNNABLE_PATH=sk.groovy
     INSTALL_DIR=~/.sk
+    RUNNABLE_PATH=sk.groovy
     RUNNABLE_LINK=/usr/local/bin/sk
 
     if [ -d "$INSTALL_DIR" ]; then
