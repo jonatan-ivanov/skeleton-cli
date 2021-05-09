@@ -24,7 +24,7 @@ EPOCH_DAYS=$(( $(date +%s) / 60 / 60 / 24 ))
 
 printf "${BLUE}%s${NORMAL}\n" "Updating..."
 cd "$INSTALL_DIR"
-if git pull --rebase --stat origin master
+if git pull --rebase --stat origin main
 then
     echo "LAST_UPDATED_EPOCH_DAYS=$EPOCH_DAYS" > $LAST_UPDATED_FILE
     printf "${BLUE}%s\n" "Hooray! Update has been completed and/or is at the current version."
